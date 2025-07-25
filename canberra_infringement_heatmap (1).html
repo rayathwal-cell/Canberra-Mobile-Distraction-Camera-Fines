@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4a30751cac32738f391714566fafbf71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4a30751cac32738f391714566fafbf71" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4a30751cac32738f391714566fafbf71 = L.map(
+                "map_4a30751cac32738f391714566fafbf71",
+                {
+                    center: [-35.2809, 149.13],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c5e2cacd2e208b20d05ac2d8fd088d31 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c5e2cacd2e208b20d05ac2d8fd088d31.addTo(map_4a30751cac32738f391714566fafbf71);
+        
+    
+            var heat_map_17da5035161b778f1c05ca0482d5d1eb = L.heatLayer(
+                [[-35.22051, 149.13022, 10000.0], [-35.342427, 149.156618, 10000.0], [-35.3093809, 149.1183925, 278.0], [-35.3401205, 149.09282, 133.0], [-35.2741815, 149.0638428, 139.0], [-35.2458302, 149.0621443, 75.0], [-35.2354878, 149.0559658, 30.0], [-35.1978273, 149.1038754, 61.0], [-35.1755379, 149.1399987, 152.0], [-35.2145622, 149.1461517, 74.0], [-35.3475489, 149.1078759, 83.0], [-35.3429594, 149.1924158, 274.0], [-35.315053, 149.0626251, 121.0], [-35.34908, 149.0874962, 48.0], [-35.4009562, 149.0658021, 44.0], [-35.2211067, 149.0608052, 32.0], [-35.2833927, 149.1081633, 587.0], [-35.2168303, 149.0444779, 30.0], [-35.425559, 149.080528, 236.0], [-35.4141883, 149.073767, 78.0], [-35.2237408, 149.05503, 9.0], [-35.2270019, 149.060658, 23.0], [-35.2745849, 149.075736, 36.0], [-35.2967363, 149.1265963, 322.0], [-35.2484508, 149.070095, 77.0], [-35.3347016, 149.1701015, 115.0], [-35.2519489, 149.0811658, 34.0], [-35.4068238, 149.0995668, 37.0], [-35.220147, 149.0586775, 21.0], [-35.243949, 149.0907636, 74.0], [-35.2325266, 149.0927071, 67.0], [-35.2526994, 149.087184, 58.0], [-35.2773229, 149.0783156, 111.0], [-35.2405153, 149.0293814, 129.0], [-35.2646383, 149.0556493, 56.0], [-35.2194844, 149.0507667, 18.0], [-35.2035998, 149.0901398, 79.0], [-35.1799437, 149.0713952, 18.0], [-35.2625711, 149.187262, 51.0], [-35.2945734, 149.1798959, 55.0], [-35.3915886, 149.1094601, 92.0], [-35.3610159, 149.1044772, 204.0], [-35.320546, 149.0612186, 278.0], [-35.3125158, 149.087601, 125.0], [-35.3127811, 149.0843379, 119.0], [-35.3246947, 149.0881832, 152.0], [-35.2319318, 149.1499619, 108.0], [-35.3248419, 149.2217609, 97.0], [-35.319915, 149.206086, 78.0], [-35.3116887, 149.1690984, 439.0], [-35.3320528, 149.3393737, 57.0], [-35.4043678, 149.146317, 31.0], [-35.4628598, 149.1345431, 61.0], [-35.252655, 149.1879969, 28.0], [-35.3045859, 149.1331655, 142.0], [-35.3975342, 149.104902, 45.0], [-35.4137716, 149.0813888, 44.0], [-35.3790583, 149.1158039, 39.0], [-35.3356496, 149.0879807, 82.0], [-35.3144169, 149.0958697, 173.0], [-35.244017, 149.0582524, 29.0], [-35.2488216, 149.0705587, 49.0], [-35.238972, 149.1022708, 36.0], [-35.243685, 149.1133237, 98.0], [-35.2152961, 149.0405511, 46.0], [-35.2039597, 149.0240126, 3.0], [-35.2209309, 149.0606597, 15.0], [-35.2340542, 149.0532762, 26.0], [-35.2178758, 149.0060133, 10.0], [-35.2361946, 149.023155, 53.0], [-35.2649435, 149.0745173, 36.0], [-35.4502731, 149.0827983, 10.0], [-35.4401222, 149.0881951, 22.0], [-35.4695035, 149.0909932, 44.0], [-35.440434, 149.0941982, 74.0], [-35.4308204, 149.0875689, 75.0], [-35.4334604, 149.1086518, 57.0], [-35.4382182, 149.1265384, 76.0], [-35.4786414, 149.1458315, 22.0], [-35.387738, 149.1679802, 29.0], [-35.3732306, 149.1685278, 77.0], [-35.3559459, 149.1671039, 88.0], [-35.2045613, 149.1482469, 42.0], [-35.2075679, 149.1062544, 42.0], [-35.1973689, 149.0905636, 71.0], [-35.1989065, 149.0910665, 123.0], [-35.1919473, 149.0643239, 24.0], [-35.1791076, 149.0697795, 31.0], [-35.1812215, 149.0781782, 26.0], [-35.1584934, 149.1028512, 27.0], [-35.1531308, 149.1209406, 6.0], [-35.1860493, 149.1582069, 67.0], [-35.1838357, 149.1528378, 31.0], [-35.1984125, 149.1635727, 23.0], [-35.2074017, 149.1615985, 4.0], [-35.2079775, 149.1443144, 13.0], [-35.2555866, 149.0924881, 34.0], [-35.2462689, 149.110644, 40.0], [-35.2435108, 149.1133302, 24.0], [-35.2107489, 149.1323974, 29.0], [-35.2000711, 149.132338, 20.0], [-35.1915549, 149.1263952, 17.0], [-35.3800152, 149.0932409, 35.0], [-35.3881883, 149.0889472, 37.0], [-35.3789976, 149.0937313, 17.0], [-35.3665138, 149.0927315, 38.0], [-35.3418304, 149.0443585, 16.0], [-35.206595, 149.030863, 5.0]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 20,
+  "blur": 15,
+  "gradient": {
+  0.2: "green",
+  0.5: "yellow",
+  1.0: "red",
+},
+}
+            );
+        
+    
+            heat_map_17da5035161b778f1c05ca0482d5d1eb.addTo(map_4a30751cac32738f391714566fafbf71);
+        
+    
+            var feature_group_99459e0ad9a80814dcc373f9e6c4b8d2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_b507774709fc5757b6086ba1e83ee600 = L.circleMarker(
+                [-35.22051, 149.13022],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_b507774709fc5757b6086ba1e83ee600.bindTooltip(
+                `<div>
+                     GUNGAHLIN DRIVE, MITCHELL: 18768 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44371de22269bb0f687ebe804e9f1c9c = L.circleMarker(
+                [-35.342427, 149.156618],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_44371de22269bb0f687ebe804e9f1c9c.bindTooltip(
+                `<div>
+                     HINDMARSH DRIVE, SYMONSTON: 11545 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7422c11df22472915d1191382c493a47 = L.circleMarker(
+                [-35.3093809, 149.1183925],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_7422c11df22472915d1191382c493a47.bindTooltip(
+                `<div>
+                     ADELAIDE AVENUE, YARRALUMLA: 278 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b78c0a17ad71efffc2c551a00e212e5 = L.circleMarker(
+                [-35.3401205, 149.09282],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_8b78c0a17ad71efffc2c551a00e212e5.bindTooltip(
+                `<div>
+                     YAMBA DRIVE, PHILLIP: 133 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ba3aa04301851cc89a3a9d947be7b58 = L.circleMarker(
+                [-35.2741815, 149.0638428],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_8ba3aa04301851cc89a3a9d947be7b58.bindTooltip(
+                `<div>
+                     WILLIAM HOVEL DRIVE, MOLONGLO VALLEY: 139 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a104ba7a000beedb61095781f747172 = L.circleMarker(
+                [-35.2458302, 149.0621443],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_1a104ba7a000beedb61095781f747172.bindTooltip(
+                `<div>
+                     BELCONNEN WAY, MACQUARIE: 75 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c533e031f0471101a2548b1a0cb3de8 = L.circleMarker(
+                [-35.2354878, 149.0559658],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_8c533e031f0471101a2548b1a0cb3de8.bindTooltip(
+                `<div>
+                     SOUTHERN CROSS DRIVE, PAGE: 30 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8986528452046368577b415272d7704 = L.circleMarker(
+                [-35.1978273, 149.1038754],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d8986528452046368577b415272d7704.bindTooltip(
+                `<div>
+                     GUNDAROO DRIVE, CRACE: 61 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc7cbc9679874d5070a9a665a37c368f = L.circleMarker(
+                [-35.1755379, 149.1399987],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_bc7cbc9679874d5070a9a665a37c368f.bindTooltip(
+                `<div>
+                     HORSE PARK DRIVE, FORDE: 152 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f8377271e48e8b52c856ed765e1f09f = L.circleMarker(
+                [-35.2145622, 149.1461517],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_8f8377271e48e8b52c856ed765e1f09f.bindTooltip(
+                `<div>
+                     FLEMINGTON ROAD, MITCHELL: 74 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_14a204aeaa9118d681179ca026ec780c = L.circleMarker(
+                [-35.3475489, 149.1078759],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_14a204aeaa9118d681179ca026ec780c.bindTooltip(
+                `<div>
+                     HINDMARSH DRIVE, O'MALLEY: 83 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fe3568763d14f37b8d87a0c6bc46da5 = L.circleMarker(
+                [-35.3429594, 149.1924158],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_1fe3568763d14f37b8d87a0c6bc46da5.bindTooltip(
+                `<div>
+                     CANBERRA AVENUE, JERRABOMBERRA: 274 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40cea49d5b0b2da12d3faa91db1e3249 = L.circleMarker(
+                [-35.315053, 149.0626251],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_40cea49d5b0b2da12d3faa91db1e3249.bindTooltip(
+                `<div>
+                     TUGGERANONG PARKWAY, WESTON: 121 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13550ba5653b99db47065748807038f4 = L.circleMarker(
+                [-35.34908, 149.0874962],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_13550ba5653b99db47065748807038f4.bindTooltip(
+                `<div>
+                     HINDMARSH DRIVE, PHILLIP: 48 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_869e13a414bc0e3d2986aa067d10b29a = L.circleMarker(
+                [-35.4009562, 149.0658021],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_869e13a414bc0e3d2986aa067d10b29a.bindTooltip(
+                `<div>
+                     ATHLLON DRIVE, GREENWAY: 44 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_420fd12b53c005770c4fef4abb9e8271 = L.circleMarker(
+                [-35.2211067, 149.0608052],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_420fd12b53c005770c4fef4abb9e8271.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, FLOREY: 32 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95bd1520b9bd274bda1ad9dc70334cba = L.circleMarker(
+                [-35.2833927, 149.1081633],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_95bd1520b9bd274bda1ad9dc70334cba.bindTooltip(
+                `<div>
+                     PARKES WAY, ACTON: 587 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ef40b5b520ff285be6ef8de66837baa = L.circleMarker(
+                [-35.2168303, 149.0444779],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_4ef40b5b520ff285be6ef8de66837baa.bindTooltip(
+                `<div>
+                     KINGSFORD SMITH DRIVE, MELBA: 30 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fe093a76f5f8df59afb2966e043b224 = L.circleMarker(
+                [-35.425559, 149.080528],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_3fe093a76f5f8df59afb2966e043b224.bindTooltip(
+                `<div>
+                     DRAKEFORD DRIVE, ISABELLA PLAINS: 236 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd9754bbe6af262fcf9c85baae9c2bf5 = L.circleMarker(
+                [-35.4141883, 149.073767],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_bd9754bbe6af262fcf9c85baae9c2bf5.bindTooltip(
+                `<div>
+                     DRAKEFORD DRIVE, GREENWAY: 78 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da15c8fb3324592be96da52430546c8c = L.circleMarker(
+                [-35.2237408, 149.05503],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_da15c8fb3324592be96da52430546c8c.bindTooltip(
+                `<div>
+                     JOHN CLELAND CRESCENT, FLOREY: 9 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6af98c6295253fce9dfcbd48c33f689f = L.circleMarker(
+                [-35.2270019, 149.060658],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_6af98c6295253fce9dfcbd48c33f689f.bindTooltip(
+                `<div>
+                     COULTER DRIVE, BELCONNEN: 23 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2c5fc7cc2086e230ab1abeeee655d72 = L.circleMarker(
+                [-35.2745849, 149.075736],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_a2c5fc7cc2086e230ab1abeeee655d72.bindTooltip(
+                `<div>
+                     BINDUBI STREET, MOLONGLO VALLEY: 36 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f249a5237c339114c7201bf1287b7811 = L.circleMarker(
+                [-35.2967363, 149.1265963],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_f249a5237c339114c7201bf1287b7811.bindTooltip(
+                `<div>
+                     COMMONWEALTH AVENUE, PARKES: 322 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6db6e4a6ec422e53b031209999363b5 = L.circleMarker(
+                [-35.2484508, 149.070095],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d6db6e4a6ec422e53b031209999363b5.bindTooltip(
+                `<div>
+                     BELCONNEN WAY, BELCONNEN: 77 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ee3c36e7447ca8b1870e58c267b69cd = L.circleMarker(
+                [-35.3347016, 149.1701015],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_1ee3c36e7447ca8b1870e58c267b69cd.bindTooltip(
+                `<div>
+                     CANBERRA AVENUE, FYSHWICK: 115 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4826a728961239a3eeed03509295bb96 = L.circleMarker(
+                [-35.2519489, 149.0811658],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_4826a728961239a3eeed03509295bb96.bindTooltip(
+                `<div>
+                     BELCONNEN WAY, BRUCE: 34 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_149bf999ceaab849f54694a3891ce9fe = L.circleMarker(
+                [-35.4068238, 149.0995668],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_149bf999ceaab849f54694a3891ce9fe.bindTooltip(
+                `<div>
+                     ERINDALE DRIVE, MONASH: 37 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03a5808abb06705963120dab2c70a6a2 = L.circleMarker(
+                [-35.220147, 149.0586775],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_03a5808abb06705963120dab2c70a6a2.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, EVATT: 21 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_94c6993ed31c3f945dfcf24fcf4cb6fd = L.circleMarker(
+                [-35.243949, 149.0907636],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_94c6993ed31c3f945dfcf24fcf4cb6fd.bindTooltip(
+                `<div>
+                     HAYDON DRIVE, BELCONNEN: 74 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13371dcaac940936939eaeda437bccbc = L.circleMarker(
+                [-35.2325266, 149.0927071],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_13371dcaac940936939eaeda437bccbc.bindTooltip(
+                `<div>
+                     BALDWIN DRIVE, LAWSON: 67 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ce4c0dfe1904e7b865191e722d7eadb = L.circleMarker(
+                [-35.2526994, 149.087184],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_0ce4c0dfe1904e7b865191e722d7eadb.bindTooltip(
+                `<div>
+                     HAYDON DRIVE, BRUCE: 58 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2318221978736a444dc4826a1870e980 = L.circleMarker(
+                [-35.2773229, 149.0783156],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_2318221978736a444dc4826a1870e980.bindTooltip(
+                `<div>
+                     WILLIAM HOVELL DRIVE, MOLONGLO VALLEY: 111 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3088aac15486a572b182eed29a2213e3 = L.circleMarker(
+                [-35.2405153, 149.0293814],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_3088aac15486a572b182eed29a2213e3.bindTooltip(
+                `<div>
+                     KINGSFORD SMITH DRIVE, HIGGINS: 129 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e1af41e72109a0925f178ce960ea0ce8 = L.circleMarker(
+                [-35.2646383, 149.0556493],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_e1af41e72109a0925f178ce960ea0ce8.bindTooltip(
+                `<div>
+                     COULTER DRIVE, COOK: 56 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17cfbd94ca521d3e25bf22ff52e9e489 = L.circleMarker(
+                [-35.2194844, 149.0507667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_17cfbd94ca521d3e25bf22ff52e9e489.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, MELBA: 18 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60f20578c91946db54d7f24fbb9da869 = L.circleMarker(
+                [-35.2035998, 149.0901398],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_60f20578c91946db54d7f24fbb9da869.bindTooltip(
+                `<div>
+                     GUNDAROO DRIVE, BELCONNEN: 79 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89131232d3b99e8e6e746c8149d8da46 = L.circleMarker(
+                [-35.1799437, 149.0713952],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_89131232d3b99e8e6e746c8149d8da46.bindTooltip(
+                `<div>
+                     BARTON HIGHWAY, BELCONNEN: 18 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80225efe0f07a7fd68c76cdbd5a8bf3e = L.circleMarker(
+                [-35.2625711, 149.187262],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_80225efe0f07a7fd68c76cdbd5a8bf3e.bindTooltip(
+                `<div>
+                     MAJURA PARKWAY, MAJURA: 51 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63ffb5c867f5a95145e686d5fde64197 = L.circleMarker(
+                [-35.2945734, 149.1798959],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_63ffb5c867f5a95145e686d5fde64197.bindTooltip(
+                `<div>
+                     MAJURA PARKWAY, MAJURA: 55 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c12bfe2196cc46b437b3193ca7f2726 = L.circleMarker(
+                [-35.3915886, 149.1094601],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_2c12bfe2196cc46b437b3193ca7f2726.bindTooltip(
+                `<div>
+                     ERINDALE DRIVE, TUGGERANONG: 92 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d5c3fd6a354c2b898e7b185be1cb14b7 = L.circleMarker(
+                [-35.3610159, 149.1044772],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d5c3fd6a354c2b898e7b185be1cb14b7.bindTooltip(
+                `<div>
+                     YAMBA DRIVE, MAWSON: 204 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cff6c6268a715863c1e43535fff5744e = L.circleMarker(
+                [-35.320546, 149.0612186],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_cff6c6268a715863c1e43535fff5744e.bindTooltip(
+                `<div>
+                     COTTER ROAD, WESTON: 278 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3851a8253ce0f78cb5a2b26d890fde6 = L.circleMarker(
+                [-35.3125158, 149.087601],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_a3851a8253ce0f78cb5a2b26d890fde6.bindTooltip(
+                `<div>
+                     COTTER ROAD, CURTIN: 125 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30684075f3b3880219ba9c12b73fc1e1 = L.circleMarker(
+                [-35.3127811, 149.0843379],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_30684075f3b3880219ba9c12b73fc1e1.bindTooltip(
+                `<div>
+                     COTTER ROAD, CURTIN: 119 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1fb1d3b48fd753ddbe41322e74a4214 = L.circleMarker(
+                [-35.3246947, 149.0881832],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_c1fb1d3b48fd753ddbe41322e74a4214.bindTooltip(
+                `<div>
+                     YARRA GLEN, DEAKIN: 152 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74a5b98c04abc6ac2ebd3339c5d21169 = L.circleMarker(
+                [-35.2319318, 149.1499619],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_74a5b98c04abc6ac2ebd3339c5d21169.bindTooltip(
+                `<div>
+                     FEDERAL HIGHWAY, WATSON: 108 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fcdb596f88f8fcbbde0e47467c6f7a82 = L.circleMarker(
+                [-35.3248419, 149.2217609],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_fcdb596f88f8fcbbde0e47467c6f7a82.bindTooltip(
+                `<div>
+                     PIALLIGO AVENUE, MAJURA: 97 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6bd14ea2fc0f3a73d7f4bdc9d593cd5 = L.circleMarker(
+                [-35.319915, 149.206086],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d6bd14ea2fc0f3a73d7f4bdc9d593cd5.bindTooltip(
+                `<div>
+                     PIALLIGO AVENUE, MAJURA: 78 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_995c6d79fd3ce0e3d60e459da48136c9 = L.circleMarker(
+                [-35.3116887, 149.1690984],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_995c6d79fd3ce0e3d60e459da48136c9.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, FYSHWICK: 439 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b6280fd312b596691c1b92e5936cd98 = L.circleMarker(
+                [-35.3320528, 149.3393737],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_1b6280fd312b596691c1b92e5936cd98.bindTooltip(
+                `<div>
+                     KINGS HIGHWAY, KOWEN: 57 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cba3715ee99bc33dacb09d13f5c6e8aa = L.circleMarker(
+                [-35.4043678, 149.146317],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_cba3715ee99bc33dacb09d13f5c6e8aa.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, HUME: 31 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d60df02ef05804c5459b5aa87e9dccd = L.circleMarker(
+                [-35.4628598, 149.1345431],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_7d60df02ef05804c5459b5aa87e9dccd.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, TUGGERANONG: 61 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2338a80c8f8398713689a7db8ba0f11 = L.circleMarker(
+                [-35.252655, 149.1879969],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_f2338a80c8f8398713689a7db8ba0f11.bindTooltip(
+                `<div>
+                     MAJURA PARKWAY, MAJURA: 28 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0d54ebda3e19b04b73fafeb62a4a4a8 = L.circleMarker(
+                [-35.3045859, 149.1331655],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_f0d54ebda3e19b04b73fafeb62a4a4a8.bindTooltip(
+                `<div>
+                     KINGS AVENUE, BARTON: 142 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f9187cc4a64a5f7698a0f38b3d393d2 = L.circleMarker(
+                [-35.3975342, 149.104902],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_3f9187cc4a64a5f7698a0f38b3d393d2.bindTooltip(
+                `<div>
+                     ERINDALE DRIVE, WANNIASSA: 45 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b0978b200c68daea801478dd876f2de = L.circleMarker(
+                [-35.4137716, 149.0813888],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_0b0978b200c68daea801478dd876f2de.bindTooltip(
+                `<div>
+                     ERINDALE DRIVE, WANNIASSA: 44 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8be3c02e6583bb8cb4349c0c1061adcb = L.circleMarker(
+                [-35.3790583, 149.1158039],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_8be3c02e6583bb8cb4349c0c1061adcb.bindTooltip(
+                `<div>
+                     YAMBA DRIVE, ISSACS: 39 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8be6009a11361644f418dd69b444c6a3 = L.circleMarker(
+                [-35.3356496, 149.0879807],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_8be6009a11361644f418dd69b444c6a3.bindTooltip(
+                `<div>
+                     YAMBA DRIVE, HUGHES: 82 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_faf8eaa39911650784a9211f7e451b91 = L.circleMarker(
+                [-35.3144169, 149.0958697],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_faf8eaa39911650784a9211f7e451b91.bindTooltip(
+                `<div>
+                     YARRA GLEN, YARRALUMLA: 173 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01bf3334af6727b4ebc187bc7b758557 = L.circleMarker(
+                [-35.244017, 149.0582524],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_01bf3334af6727b4ebc187bc7b758557.bindTooltip(
+                `<div>
+                     BELCONNEN WAY, MACQUARIE: 29 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cae2f8df5b18cd1e3c7d5c9b0403a0b2 = L.circleMarker(
+                [-35.2488216, 149.0705587],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_cae2f8df5b18cd1e3c7d5c9b0403a0b2.bindTooltip(
+                `<div>
+                     BELCONNEN WAY, MACQUARIE: 49 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44ae05c4b2f01580cae344666e773944 = L.circleMarker(
+                [-35.238972, 149.1022708],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_44ae05c4b2f01580cae344666e773944.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, BRUCE: 36 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a8d9a4550023e8c5253cb87858497bd = L.circleMarker(
+                [-35.243685, 149.1133237],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_2a8d9a4550023e8c5253cb87858497bd.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, O'CONNOR: 98 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4e53cc2f852575a7045257c78cb9dd6 = L.circleMarker(
+                [-35.2152961, 149.0405511],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_e4e53cc2f852575a7045257c78cb9dd6.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, FLYNN: 46 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9d8258a6c4d3151673f999fb3fc4942 = L.circleMarker(
+                [-35.2039597, 149.0240126],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_e9d8258a6c4d3151673f999fb3fc4942.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, MACGREGOR: 3 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_919ed0ad0fcd713d105a898981d0fabd = L.circleMarker(
+                [-35.2209309, 149.0606597],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_919ed0ad0fcd713d105a898981d0fabd.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, FLOREY: 15 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1844e6ea7cdaecc2e80cf6426d80fa6e = L.circleMarker(
+                [-35.2340542, 149.0532762],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_1844e6ea7cdaecc2e80cf6426d80fa6e.bindTooltip(
+                `<div>
+                     SOUTHERN CROSS DRIVE, FLOREY: 26 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ace02061afd6da626cd9959ddf4e2e2f = L.circleMarker(
+                [-35.2178758, 149.0060133],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_ace02061afd6da626cd9959ddf4e2e2f.bindTooltip(
+                `<div>
+                     SOUTHERN CROSS DRIVE, MACGREGOR: 10 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_171ad26df8ec1110ff64f09fa0b8f6a2 = L.circleMarker(
+                [-35.2361946, 149.023155],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_171ad26df8ec1110ff64f09fa0b8f6a2.bindTooltip(
+                `<div>
+                     DRAKE BROCKMAN DRIVE, HIGGINS: 53 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4240c958dd4a8a67dbd0a60735f3c1ae = L.circleMarker(
+                [-35.2649435, 149.0745173],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_4240c958dd4a8a67dbd0a60735f3c1ae.bindTooltip(
+                `<div>
+                     BINDUBI STREET, ARANDA: 36 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9aac9fac5702086332527de36ca2863 = L.circleMarker(
+                [-35.4502731, 149.0827983],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d9aac9fac5702086332527de36ca2863.bindTooltip(
+                `<div>
+                     WOODCOCK DRIVE, GORDON: 10 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01482c34bfbc934779d0015da7eb73a8 = L.circleMarker(
+                [-35.4401222, 149.0881951],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_01482c34bfbc934779d0015da7eb73a8.bindTooltip(
+                `<div>
+                     WOODCOCK DRIVE, GORDON: 22 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b26a2b519f456dad7cd9793b58f6a51e = L.circleMarker(
+                [-35.4695035, 149.0909932],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_b26a2b519f456dad7cd9793b58f6a51e.bindTooltip(
+                `<div>
+                     THARWA DRIVE, BANKS: 44 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b17d88efa595705d1623657f479497f5 = L.circleMarker(
+                [-35.440434, 149.0941982],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_b17d88efa595705d1623657f479497f5.bindTooltip(
+                `<div>
+                     DRAKEFORD DRIVE, CALWELL: 74 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f06f0ac8df7e1b04569bb08e8d6d9c8c = L.circleMarker(
+                [-35.4308204, 149.0875689],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_f06f0ac8df7e1b04569bb08e8d6d9c8c.bindTooltip(
+                `<div>
+                     DRAKEFORD DRIVE, ISABELLA PLAINS: 75 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ad94f41ba1dd027317f20bdbe75df4c = L.circleMarker(
+                [-35.4334604, 149.1086518],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_4ad94f41ba1dd027317f20bdbe75df4c.bindTooltip(
+                `<div>
+                     JOHNSON DRIVE, RICHARDSON: 57 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc1bdc5c92f7592d254457a0b49ef410 = L.circleMarker(
+                [-35.4382182, 149.1265384],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_fc1bdc5c92f7592d254457a0b49ef410.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, THEODORE: 76 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bdd0c5a7313436917b9f1651aa4d6ed = L.circleMarker(
+                [-35.4786414, 149.1458315],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_9bdd0c5a7313436917b9f1651aa4d6ed.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, TUGGERANONG: 22 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7477e4779527fa185c127eecaeb5052d = L.circleMarker(
+                [-35.387738, 149.1679802],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_7477e4779527fa185c127eecaeb5052d.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, HUME: 29 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12fcf323eb9f264dc61dd631b71794bf = L.circleMarker(
+                [-35.3732306, 149.1685278],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_12fcf323eb9f264dc61dd631b71794bf.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, HUME: 77 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52e6e78282923468d2fd714632c52abe = L.circleMarker(
+                [-35.3559459, 149.1671039],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_52e6e78282923468d2fd714632c52abe.bindTooltip(
+                `<div>
+                     MONARO HIGHWAY, SYMONSTON: 88 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc5a77cec078e05fdfb13632f21b29d6 = L.circleMarker(
+                [-35.2045613, 149.1482469],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_fc5a77cec078e05fdfb13632f21b29d6.bindTooltip(
+                `<div>
+                     FLEMINGTON ROAD, FRANKLIN: 42 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd73c2e7ba87676bde82c16b3b0f9ac4 = L.circleMarker(
+                [-35.2075679, 149.1062544],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_bd73c2e7ba87676bde82c16b3b0f9ac4.bindTooltip(
+                `<div>
+                     BARTON HIGHWAY, CRACE: 42 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eeb674f1a69a3b35e7849ed9f613f479 = L.circleMarker(
+                [-35.1973689, 149.0905636],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_eeb674f1a69a3b35e7849ed9f613f479.bindTooltip(
+                `<div>
+                     BARTON HIGHWAY, NICHOLLS: 71 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9b13fc3e9a8499295f22d6da9b0360b = L.circleMarker(
+                [-35.1989065, 149.0910665],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_c9b13fc3e9a8499295f22d6da9b0360b.bindTooltip(
+                `<div>
+                     BARTON HIGHWAY, BELCONNEN: 123 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45c92494519ce77849e957a33480922b = L.circleMarker(
+                [-35.1919473, 149.0643239],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_45c92494519ce77849e957a33480922b.bindTooltip(
+                `<div>
+                     KURINGA DRIVE, BELCONNEN: 24 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0062750461858e10c6789b33cc96db88 = L.circleMarker(
+                [-35.1791076, 149.0697795],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_0062750461858e10c6789b33cc96db88.bindTooltip(
+                `<div>
+                     BARTON HIGHWAY, HALL: 31 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb9da9c2f31de155978eb006fb878581 = L.circleMarker(
+                [-35.1812215, 149.0781782],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_bb9da9c2f31de155978eb006fb878581.bindTooltip(
+                `<div>
+                     CLARRIE HERMES DRIVE, NICHOLLS: 26 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_26b8d5d55fa4a60272cea2e1a5fb7e42 = L.circleMarker(
+                [-35.1584934, 149.1028512],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_26b8d5d55fa4a60272cea2e1a5fb7e42.bindTooltip(
+                `<div>
+                     HORSE PARK DRIVE, CASEY: 27 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf71e732e5fb7cb8fe120204e9f06e59 = L.circleMarker(
+                [-35.1531308, 149.1209406],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_bf71e732e5fb7cb8fe120204e9f06e59.bindTooltip(
+                `<div>
+                     HORSE PARK DRIVE, TAYLOR: 6 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3abd4555781f936947837a073aaf32ed = L.circleMarker(
+                [-35.1860493, 149.1582069],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_3abd4555781f936947837a073aaf32ed.bindTooltip(
+                `<div>
+                     HORSE PARK DRIVE, THROSBY: 67 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0a2713368c8a12819a6c0a822d549b8 = L.circleMarker(
+                [-35.1838357, 149.1528378],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d0a2713368c8a12819a6c0a822d549b8.bindTooltip(
+                `<div>
+                     HORSE PARK DRIVE, GUNGAHLIN: 31 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fcb80c82069e875e2a900832f9e6358 = L.circleMarker(
+                [-35.1984125, 149.1635727],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_6fcb80c82069e875e2a900832f9e6358.bindTooltip(
+                `<div>
+                     HORSE PARK DRIVE, HARRISON: 23 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d8a4345c3cf8ccd9543c78e23050b14 = L.circleMarker(
+                [-35.2074017, 149.1615985],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_9d8a4345c3cf8ccd9543c78e23050b14.bindTooltip(
+                `<div>
+                     WELLS STATION DRIVE, HARRISON: 4 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3a985f3400e2b4be30efe5c23ae6d74f = L.circleMarker(
+                [-35.2079775, 149.1443144],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_3a985f3400e2b4be30efe5c23ae6d74f.bindTooltip(
+                `<div>
+                     WELLS STATION DRIVE, FRANKLIN: 13 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_474adb90123096c28334bbdf19257c16 = L.circleMarker(
+                [-35.2555866, 149.0924881],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_474adb90123096c28334bbdf19257c16.bindTooltip(
+                `<div>
+                     GUNGAHLIN DRIVE, BRUCE: 34 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ecdf1df0cfa4f3a02fdd153bb6b3b38b = L.circleMarker(
+                [-35.2462689, 149.110644],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_ecdf1df0cfa4f3a02fdd153bb6b3b38b.bindTooltip(
+                `<div>
+                     GUNGAHLIN DRIVE, BRUCE: 40 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78c5e1a539600a6cc330278d9ce2a8b7 = L.circleMarker(
+                [-35.2435108, 149.1133302],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_78c5e1a539600a6cc330278d9ce2a8b7.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, LYNEHAM: 24 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a719fa8eca69db17ee51204b51baa438 = L.circleMarker(
+                [-35.2107489, 149.1323974],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_a719fa8eca69db17ee51204b51baa438.bindTooltip(
+                `<div>
+                     GUNGAHLIN DRIVE, MITCHELL: 29 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0cf5251f74ab7436834fb2351c414a1 = L.circleMarker(
+                [-35.2000711, 149.132338],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d0cf5251f74ab7436834fb2351c414a1.bindTooltip(
+                `<div>
+                     GUNGAHLIN DRIVE, GUNGAHLIN: 20 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afe55f3aabd34212ebcefe32ec156089 = L.circleMarker(
+                [-35.1915549, 149.1263952],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_afe55f3aabd34212ebcefe32ec156089.bindTooltip(
+                `<div>
+                     GUNGAHLIN DRIVE, GUNGAHLIN: 17 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d830dc08554f02bf8302cba250b9de03 = L.circleMarker(
+                [-35.3800152, 149.0932409],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_d830dc08554f02bf8302cba250b9de03.bindTooltip(
+                `<div>
+                     ATHLLON DRIVE, TORRENS: 35 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e1647475e488015687f0c3a95d6156f = L.circleMarker(
+                [-35.3881883, 149.0889472],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_0e1647475e488015687f0c3a95d6156f.bindTooltip(
+                `<div>
+                     ATHLLON DRIVE, WANNIASSA: 37 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a47155f8a3b836ac4494519369292016 = L.circleMarker(
+                [-35.3789976, 149.0937313],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_a47155f8a3b836ac4494519369292016.bindTooltip(
+                `<div>
+                     ATHLLON DRIVE, FARRER: 17 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c0f4fa395aa4155bf95b49f46181294 = L.circleMarker(
+                [-35.3665138, 149.0927315],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_7c0f4fa395aa4155bf95b49f46181294.bindTooltip(
+                `<div>
+                     ATHLLON DRIVE, MAWSON: 38 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07fee262137bea117e6e952b7272a15d = L.circleMarker(
+                [-35.3418304, 149.0443585],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_07fee262137bea117e6e952b7272a15d.bindTooltip(
+                `<div>
+                     HINDMARSH DRIVE, RIVETT: 16 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c884633cdb3beca6d769cb7947c560f9 = L.circleMarker(
+                [-35.206595, 149.030863],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99459e0ad9a80814dcc373f9e6c4b8d2);
+        
+    
+            circle_marker_c884633cdb3beca6d769cb7947c560f9.bindTooltip(
+                `<div>
+                     GINNINDERRA DRIVE, LATHAM: 5 infringements
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_19e593c15c75a0b308ae53039423fc7b_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_c5e2cacd2e208b20d05ac2d8fd088d31,
+                },
+                overlays :  {
+                    "Infringement Hotspots" : heat_map_17da5035161b778f1c05ca0482d5d1eb,
+                    "Camera Locations" : feature_group_99459e0ad9a80814dcc373f9e6c4b8d2,
+                },
+            };
+            let layer_control_19e593c15c75a0b308ae53039423fc7b = L.control.layers(
+                layer_control_19e593c15c75a0b308ae53039423fc7b_layers.base_layers,
+                layer_control_19e593c15c75a0b308ae53039423fc7b_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_4a30751cac32738f391714566fafbf71);
+
+        
+</script>
+</html>
